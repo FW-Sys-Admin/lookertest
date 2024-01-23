@@ -883,4 +883,14 @@ explore: Survey_Responses_With_Userid {
     relationship:  one_to_one
     sql_on:  ${clients.id} = ${users.clientid} ;;
   }
+  join: learningpathactions {
+    type: left_outer
+    relationship:  one_to_one
+    sql_on:  ${learningpathactions.userid} = ${users.id} ;;
+  }
+  join: learningpaths {
+    type: left_outer
+    relationship:  one_to_one
+    sql_on:  ${learningpaths.id} = ${learningpathactions.learningpathid} ;;
+  }
 }
