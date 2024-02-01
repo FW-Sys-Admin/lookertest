@@ -90,11 +90,11 @@ view: users {
     type: string
     sql: ${TABLE}.ref3 ;;
   }
-  dimension: ref4 {
+  dimension: co_borrower_firstname {
     type: string
     sql: ${TABLE}.ref4 ;;
   }
-  dimension: ref5 {
+  dimension: co_borrower_lastname {
     type: string
     sql: ${TABLE}.ref5 ;;
   }
@@ -160,33 +160,33 @@ view: users {
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
-	id,
-	firstname,
-	lastname,
-	shippingname,
-	clients.name,
-	clients.id,
-	assignmentsubmissions.count,
-	onboarding_survey_responses2.count,
-	onboarding_survey_responses.count,
-	awards.count,
-	certificates.count,
-	courseactions.count,
-	learningpathactions.count,
-	ltiattempts.count,
-	onboardingsurveyresponses.count,
-	quizattempts.count,
-	quizattemptresponses.count,
-	scormattempts.count,
-	scormattemptresponses.count,
-	testimonials.count,
-	usercourseprogresses.count,
-	userlearningpaths.count,
-	userbundles.count,
-	usercourses.count,
-	userlicenses.count,
-	waitlists.count
-	]
+  id,
+  firstname,
+  lastname,
+  shippingname,
+  clients.name,
+  clients.id,
+  assignmentsubmissions.count,
+  onboarding_survey_responses2.count,
+  onboarding_survey_responses.count,
+  awards.count,
+  certificates.count,
+  courseactions.count,
+  learningpathactions.count,
+  ltiattempts.count,
+  onboardingsurveyresponses.count,
+  quizattempts.count,
+  quizattemptresponses.count,
+  scormattempts.count,
+  scormattemptresponses.count,
+  testimonials.count,
+  usercourseprogresses.count,
+  userlearningpaths.count,
+  userbundles.count,
+  usercourses.count,
+  userlicenses.count,
+  waitlists.count
+  ]
   }
 
 }
