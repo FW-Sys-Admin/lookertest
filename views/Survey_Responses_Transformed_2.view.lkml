@@ -175,7 +175,7 @@ view: Survey_Responses_With_Userid {
     type: string
     sql: ${TABLE}.which_real_estate_agent_or_broker_are_you_working_with;;
   }
-  dimension_group: Submission_Time {
+  dimension_group: Submission {
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
     datatype: datetime

@@ -20,7 +20,7 @@ view: learningpathactions {
     type: string
     sql: ${TABLE}.companyid ;;
   }
-  dimension_group: Timestamp {
+  dimension_group: Action_Timestamp {
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
     datatype: datetime
