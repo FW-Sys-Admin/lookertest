@@ -20,7 +20,7 @@ view: learningpathactions {
     type: string
     sql: ${TABLE}.companyid ;;
   }
-  dimension_group: createdat {
+  dimension_group: Timestamp {
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
     datatype: datetime
@@ -57,16 +57,16 @@ view: learningpathactions {
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
-	id,
-	learningpaths.id,
-	learningpaths.name,
-	milestones.name,
-	milestones.id,
-	users.firstname,
-	users.id,
-	users.lastname,
-	users.shippingname
-	]
+  id,
+  learningpaths.id,
+  learningpaths.name,
+  milestones.name,
+  milestones.id,
+  users.firstname,
+  users.id,
+  users.lastname,
+  users.shippingname
+  ]
   }
 
 }

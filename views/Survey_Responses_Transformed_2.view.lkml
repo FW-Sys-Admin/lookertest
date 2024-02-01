@@ -3,7 +3,7 @@ view: Survey_Responses_With_Userid {
     # Specify the SQL query to transform rows into columns
     sql:
     SELECT
-    userid,
+    userid, createdat,
     MAX(CASE WHEN Question = 'Current address' THEN Answer END) AS `Current_Address`,
     MAX(CASE WHEN Question = 'Current city' THEN Answer END) AS `Current_city`,
     MAX(CASE WHEN Question = 'State' THEN Answer END) AS State,
@@ -32,7 +32,7 @@ view: Survey_Responses_With_Userid {
     MAX(CASE WHEN Question = 'Are you working with a real estate agent/broker?' THEN Answer END) AS `are_you_working_with_a_real_estate_agent_or_broker`,
     MAX(CASE WHEN Question = 'Which real estate agent/broker are you working with?' THEN Answer END) AS `which_real_estate_agent_or_broker_are_you_working_with`,
   FROM thought-industries-data.postgres_rds_public.onboardingsurveyresponses
-  Group BY Userid
+  Group BY Userid, createdat
   ;;
   }
 
@@ -175,5 +175,10 @@ view: Survey_Responses_With_Userid {
     type: string
     sql: ${TABLE}.which_real_estate_agent_or_broker_are_you_working_with;;
   }
-
+  dimension_group: Submission_Time {
+    type: time
+    timeframes: [raw, time, date, week, month, quarter, year]
+    datatype: datetime
+    sql: ${TABLE}.createdat ;;
+  }
 }
